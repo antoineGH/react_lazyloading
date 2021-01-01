@@ -5,8 +5,7 @@
 1. [Project description](#description)
 2. [Installation instructions](#installation)
 3. [Project structure](#structure)
-4. [Conventions](#conventions)
-5. [Components](#components)
+4. [Explainations](#explainations)
 
 ## 1. Project description<a name="description"></a>
 
@@ -37,7 +36,7 @@ git clone https://github.com/antoineratat/react_lazyloading.git
 Navigate to project directory.
 
 ```shell
-cd fetch-app
+cd react_intersection_observer
 ```
 
 Install node modules.
@@ -63,3 +62,38 @@ npm start
         -   Image.js
     -   utils
         -   fetchImages.js
+
+## 4. Explainations<a name="explainations"></a>
+
+Step 1 — Initially render grey image (loading image)
+
+```shell
+<img alt={author} src={grey} />
+```
+
+Step 2 - Set up Ref
+
+```shell
+import React, { useRef } from 'react'
+const thisImage = useRef()
+<img ref={thisImage} alt={author} src={grey} />
+```
+
+Step 3 — Set up detection
+
+```shell
+useEffect(() => {
+		let observer = new IntersectionObserver(
+			(entries) =>
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						console.log('intersect')
+						thisImage.current.src = url
+						observer = observer.disconnect()
+					}
+				}),
+			{ rootMargin: '0px 0px 200px 0px' }
+		)
+		observer.observe(thisImage.current)
+	}, [url])
+```
