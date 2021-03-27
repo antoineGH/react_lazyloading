@@ -6,6 +6,7 @@
 2. [Installation instructions](#installation)
 3. [Project structure](#structure)
 4. [Explainations](#explainations)
+5. [Screenshots](#screenshots)
 
 ## 1. Project description<a name="description"></a>
 
@@ -97,3 +98,7 @@ useEffect(() => {
 		observer.observe(thisImage.current)
 	}, [url])
 ```
+
+## 5. Screenshots<a name="screenshots"></a>
+
+![Pagination Screenshot](https://github.com/antoineratat/react_lazyloading/blob/main/screenshots/1.PNG?raw=true)
