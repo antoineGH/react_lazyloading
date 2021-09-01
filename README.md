@@ -101,6 +101,6 @@ useEffect(() => {
 
 ## 5. Screenshots<a name="screenshots"></a>
 
-![Pagination Screenshot](https://github.com/antoineratat/react_lazyloading/blob/main/screenshots/1.PNG?raw=true)
+![Pagination Screenshot](https://templars.guru/app/github/react_intersection_observer/1.PNG)
 
 As we can observe in the Network panel of Chrome DevTools, image out of the viewport are still pending.
